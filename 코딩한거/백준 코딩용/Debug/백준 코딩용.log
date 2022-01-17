@@ -1,0 +1,4 @@
+﻿  소스.c
+E:\Programming12_02\coding\백준 코딩용\소스.c(5,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Programming12_02\coding\백준 코딩용\소스.c(9,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  백준 코딩용.vcxproj -> E:\Programming12_02\coding\Project001\Debug\백준 코딩용.exe
