@@ -45,8 +45,7 @@ void Asce(int *num, int left, int right)
 
 void main()
 {
-	int* num;
-	num = new int[MAX];
+	int* num = new int[MAX];
 
 	for (int i = 0; i < MAX; i++)
 	{
@@ -56,4 +55,6 @@ void main()
 
 	Asce(num, 0, MAX - 1);
 	Print(num, MAX);
+
+	delete[] num;
 }

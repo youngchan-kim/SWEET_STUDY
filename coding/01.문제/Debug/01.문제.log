@@ -1,4 +1,4 @@
 ﻿  소스.cpp
-E:\Programming12_02\coding\01.문제\소스.cpp(27,6): warning C4101: 'tmp' :참조되지 않은 지역 변수입니다.
-E:\Programming12_02\coding\01.문제\소스.cpp(47,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-  01.문제.vcxproj -> E:\Programming12_02\coding\001.Coding\Debug\01.문제.exe
+C:\김영찬\Programming12_lyc\coding\01.문제\소스.cpp(27,6): warning C4101: 'tmp' :참조되지 않은 지역 변수입니다.
+C:\김영찬\Programming12_lyc\coding\01.문제\소스.cpp(47,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  01.문제.vcxproj -> C:\김영찬\Programming12_lyc\coding\001.Coding\Debug\01.문제.exe
