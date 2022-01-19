@@ -1,0 +1,5 @@
+﻿  소스.cpp
+E:\Programming12_02\coding\04.문제\소스.cpp(18,25): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+E:\Programming12_02\coding\04.문제\소스.cpp(7,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\Programming12_02\coding\04.문제\소스.cpp(11,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  04.문제.vcxproj -> E:\Programming12_02\coding\001.Coding\Debug\04.문제.exe

@@ -1,60 +1,89 @@
 #include <iostream>
-#include<Windows.h>
+#include <string>
 using namespace std;
 
-#define MAX 5
+#define MIN 2
+#define MAX 10
+#define TRUE 1
 
-void Print(int* num, int len)
+enum GOGODAN
 {
-	for (int i = 0; i < len; i++)
+	GOGODAN_ONE=1,
+	GOGODAN_TWO,
+	GOGODAN_THREE,
+	GOGODAN_FOUR,
+	GOGODAN_FIVE,
+	GOGODAN_SIX,
+	GOGODAN_SEVEN,
+	GOGODAN_EIGHT,
+	GOGODAN_NINE,
+	GOGODAN_END,
+};
+
+class GogodanNum
+{
+private:
+	int startnum, endnum;
+	GOGODAN Gogodan;
+public:
+	bool SetUsingNum(int _startnum, int _endnum);
+	void ShowPerson();
+};
+
+bool GogodanNum::SetUsingNum(int _startnum, int _endnum)
+{
+	if ((MIN > _startnum && _startnum > MAX))
 	{
-		printf("%d ", num[i]);
+		cout << "시작 단이 2보다 작거나 9보다 큽니다.";
+		return false;
 	}
-	printf("\n");
-	system("pause");
+	else if ((MIN > _endnum && _endnum > MAX))
+	{
+		cout << "끝 단이 2보다 작거나 9보다 큽니다.";
+		return false;
+	}
+	else
+	{
+		startnum = _startnum;
+		endnum = _endnum + 1;
+		return true;
+	}
 }
 
-void Swap(int *num, int low, int right)
+void GogodanNum::ShowPerson()
 {
-	int tmp;
-	tmp = num[low];
-	num[low] = num[right];
-	num[right] = tmp;
-}
-
-void Asce(int *num, int left, int right)
-{
-	int tmp;
-	if (left > right)
-		return;
-
-	int pivot = num[right];
-	int low = left;
-	int high = right - 1;
-
-	while (low <= high)
-	{
-		while (num[low] < pivot) low++;
-		while (num[high] > pivot) high--;
-		if (low < high)	Swap(num, low, high);
+	for (int i = startnum; i < endnum; i++)
+	{	
+		cout << "========" << i << "단========\t";
 	}
-	Swap(num, right, low);
-	Asce(num, left, low - 1);
-	Asce(num, low + 1, right);
+	cout << endl;
+	for (int j = GOGODAN_ONE; j < GOGODAN_END; j++)
+	{
+		for (int i = startnum  ; i < endnum  ; i++)
+		{
+			cout << "   " << i << " X " << j << "=" << i * j << "\t\t";
+		}
+		cout << endl;
+	}
 }
 
 void main()
 {
-	int* num = new int[MAX];
-
-	for (int i = 0; i < MAX; i++)
+	int start, end;
+	bool overnum;
+	GogodanNum gogodan;
+	
+	while (TRUE);
 	{
-		cout << i + 1 << "번째 정수 : ";
-		cin >> num[i];
+		cout << "시작 단 입력 : ";
+		cin >> start;
+		cout << "끝 단 입력 : ";
+		cin >> end;
+		overnum = gogodan.SetUsingNum(start, end);
+		if (overnum == true)
+		{
+			gogodan.ShowPerson();
+			return;
+		}
 	}
-
-	Asce(num, 0, MAX - 1);
-	Print(num, MAX);
-
-	delete[] num;
 }
