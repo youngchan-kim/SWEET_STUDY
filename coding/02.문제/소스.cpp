@@ -1,91 +1,57 @@
-#include <iostream>
-#include <string>
-#include <Windows.h>
+#include<iostream>
 using namespace std;
 
-#define TRUE 1
-#define MIN 1
-
-class Square
+class Quadrangle
 {
 private:
-	int width, height;
+	int Width;
+	int Height;
 public:
-
-	bool SetValue(int _width, int _height);
-	void ShowSquare();
+	void SetQuadrangle();
+	void ShowQuadrangle();
 };
-
-bool Square::SetValue(int _width, int _height)
+void Quadrangle::SetQuadrangle()
 {
-	if (MIN > _width || MIN > _height)
+	while (1)
 	{
-		cout << "가로 또는 세로가 1보다 작습니다." << endl;
+		cout << "가로 입력 : ";
+		cin >> Width;
+		cout << "세로 단 입력 : ";
+		cin >> Height;
+		if (Width <= 1 || Height <= 1)
+			cout << "가로 또는 세로가 1이하입니다." << endl;
+		else
+			break;
 		system("pause");
-		return false;
-	}
-	else 
-	{
-		width = _width;
-		height = _height;
-		return true;
 	}
 }
-
-void Square::ShowSquare()
+void Quadrangle::ShowQuadrangle()
 {
-	for (int i = MIN; i <= height; i++)
+	for (int y = 0; y < Height; y++)
 	{
-		for (int j = MIN; j <= width; j++)
+		for (int x = 0; x < Width; x++)
 		{
-			if (i == MIN)
-			{
-				if (j == MIN)
-					cout << "┌";
-				else if (j > MIN && j < width)
-					cout << "─";
-				else if (j == width)
-					cout << "┐";
-			}
-			else if (i > MIN && i < height)
-			{
-				if (j == MIN || j == width)
-					cout << "│";
-				else if (j > MIN && j < width)
-					cout << "  ";
-			}
-			else if (i == height)
-			{
-				if (j == MIN)
-					cout << "└";
-				else if (j > MIN && j < width)
-					cout << "─";
-				else if (j == width)
-					cout << "┘";
-			}
+			if (y == 0 && x == 0)
+				cout << "┌";
+			else if (y == 0 && x == Width - 1)
+				cout << "┐";
+			else if (y == Height - 1 && x == 0)
+				cout << "└";
+			else if (y == Height - 1 && x == Width - 1)
+				cout << "┘";
+			else if (y == 0 || y == Height - 1)
+				cout << "─";
+			else if (x == 0 || x == Width - 1)
+				cout << "│";
+			else
+				cout << "  ";
 		}
 		cout << endl;
 	}
 }
-
 void main()
 {
-	int width, height;
-	bool overvalue;
-	Square S1;
-	while (TRUE)
-	{
-		cout << "가로 입력 : ";
-		cin >> width;
-		cout << "세로 입력 : ";
-		cin >> height;
-		overvalue = S1.SetValue(width, height);
-		if (overvalue == true)
-		{
-			S1.ShowSquare();
-			return;
-		}
-	}
+	Quadrangle Quad1;
+	Quad1.SetQuadrangle();
+	Quad1.ShowQuadrangle();
 }
-
-

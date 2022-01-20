@@ -1,89 +1,56 @@
-#include <iostream>
-#include <string>
-using namespace std;
-
-#define MIN 2
-#define MAX 10
-#define TRUE 1
-
-enum GOGODAN
-{
-	GOGODAN_ONE=1,
-	GOGODAN_TWO,
-	GOGODAN_THREE,
-	GOGODAN_FOUR,
-	GOGODAN_FIVE,
-	GOGODAN_SIX,
-	GOGODAN_SEVEN,
-	GOGODAN_EIGHT,
-	GOGODAN_NINE,
-	GOGODAN_END,
-};
-
-class GogodanNum
-{
-private:
-	int startnum, endnum;
-	GOGODAN Gogodan;
-public:
-	bool SetUsingNum(int _startnum, int _endnum);
-	void ShowPerson();
-};
-
-bool GogodanNum::SetUsingNum(int _startnum, int _endnum)
-{
-	if ((MIN > _startnum && _startnum > MAX))
-	{
-		cout << "시작 단이 2보다 작거나 9보다 큽니다.";
-		return false;
-	}
-	else if ((MIN > _endnum && _endnum > MAX))
-	{
-		cout << "끝 단이 2보다 작거나 9보다 큽니다.";
-		return false;
-	}
-	else
-	{
-		startnum = _startnum;
-		endnum = _endnum + 1;
-		return true;
-	}
-}
-
-void GogodanNum::ShowPerson()
-{
-	for (int i = startnum; i < endnum; i++)
-	{	
-		cout << "========" << i << "단========\t";
-	}
-	cout << endl;
-	for (int j = GOGODAN_ONE; j < GOGODAN_END; j++)
-	{
-		for (int i = startnum  ; i < endnum  ; i++)
-		{
-			cout << "   " << i << " X " << j << "=" << i * j << "\t\t";
-		}
-		cout << endl;
-	}
-}
+#include"StudentManager.h"
+#include<Windows.h>
 
 void main()
 {
-	int start, end;
-	bool overnum;
-	GogodanNum gogodan;
-	
-	while (TRUE);
+	int Select;
+	StudentManager SManager;
+	string strTmp;
+	bool bTmp;
+	while (1)
 	{
-		cout << "시작 단 입력 : ";
-		cin >> start;
-		cout << "끝 단 입력 : ";
-		cin >> end;
-		overnum = gogodan.SetUsingNum(start, end);
-		if (overnum == true)
+		system("cls");
+		cout << "======학생관리 프로그램======" << endl;
+		cout << "      1.학생 등록" << endl;
+		cout << "      2.학생 목록<번호순>" << endl;
+		cout << "      3.학생 목록<학년순>" << endl;
+		cout << "      4.학생 검색" << endl;
+		cout << "      5.학년 검색" << endl;
+		cout << "      6.마지막 학생 삭제" << endl;
+		cout << "      7.학생 전체 삭제" << endl;
+		cout << "      8.종료" << endl;
+		cout << "   (학생 수 : " << SManager.GetStudentCount() << ")" << endl;
+		cout << "입력 : ";
+		cin >> Select;
+		system("cls");
+		switch (Select)
 		{
-			gogodan.ShowPerson();
+		case 1:
+			SManager.AddStudent();
+			break;
+		case 2:
+			SManager.ShowStudentList();
+			break;
+		case 3:
+
+			break;
+		case 4:
+			cout << "이름 입력 : ";
+			cin >> strTmp;
+			bTmp = SManager.FindStudentName(strTmp);
+			if (bTmp == false)
+				cout << "해당 학생이 없습니다." << endl;
+			break;
+		case 5:
+			SManager.ShowStudentClassList();
+			break;
+		case 6:
+			break;
+		case 7:
+			break;
+		case 8:
 			return;
 		}
+		system("pause");
 	}
 }

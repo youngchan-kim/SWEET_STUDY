@@ -1,54 +1,42 @@
-#include <iostream>
-#include <string>
-using namespace std;
+#include"StudentManager.h"
+#include<Windows.h>
 
-enum GENDER
-{
-	GENDER_MAN,
-	GENDER_WOMAN
-};
-
-class Person
-{
-private:
-	string Name;
-	int Age;
-	GENDER Gender;
-public:
-	void SetName(string _Name, int _Age, GENDER _Gender);
-	string GetName();
-	void ShowPerson();
-};
-
-void Person:: SetName(string _Name, int _Age, GENDER _Gender)
-{
-	Name = _Name;
-	Age = _Age;
-	Gender = _Gender;
-}
-string Person::GetName()
-{
-	return Name;
-}
-void Person::ShowPerson()
-{
-	cout << "이름 : " << Name << endl;
-	cout << "나이 : " << Age << endl;
-	cout << "성별 : ";
-	switch (Gender)
-	{
-	case GENDER_MAN:
-		cout << "남자" << endl;
-		break;
-	case GENDER_WOMAN:
-		cout << "여자" << endl;
-		break;
-	}
-}
 void main()
 {
-	Person P1;
-	P1.SetName("아이유", 25, GENDER_WOMAN);
-	cout << "======" << P1.GetName() << "의 정보" << "======" << endl;
-	P1.ShowPerson();
+	int Select;
+	StudentManager SManager;
+	string strTmp;
+	bool bTmp;
+	while (1)
+	{
+		system("cls");
+		cout << "======학생관리 프로그램======" << endl;
+		cout << "      1.학생 등록" << endl;
+		cout << "      2.학생 목록" << endl;
+		cout << "      3.학생 이름 검색" << endl;
+		cout << "      4.종료" << endl;
+		cout << "   (학생 수 : " << SManager.GetStudentCount() << ")" << endl;
+		cout << "입력 : ";
+		cin >> Select;
+		system("cls");
+		switch (Select)
+		{
+		case 1:
+			SManager.AddStudent();
+			break;
+		case 2:
+			SManager.ShowStudentList();
+			break;
+		case 3:
+			cout << "이름 입력 : ";
+			cin >> strTmp;
+			bTmp = SManager.FindStudentName(strTmp);
+			if (bTmp == false)
+				cout << "해당 학생이 없습니다." << endl;
+			break;
+		case 4:
+			return;
+		}
+		system("pause");
+	}
 }

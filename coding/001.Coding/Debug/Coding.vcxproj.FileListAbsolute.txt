@@ -1,2 +1,3 @@
 C:\김영찬\Programming12_lyc\coding\001.Coding\Debug\001.Coding.exe
 C:\김영찬\Programming12_lyc\coding\001.Coding\Debug\001.Coding.pdb
+E:\Programming12_02\coding\001.Coding\Debug\001.Coding.exe
