@@ -31,6 +31,7 @@ bool Id_Check(list<Member> member, string inputid)
 	}
 	return true;
 }
+
 bool Id_ComParison(string inputid)
 {
 	bool id_comparison = true;
@@ -50,7 +51,6 @@ bool Id_ComParison(string inputid)
 	}
 	return id_comparison;
 }
-
 bool Pw_ComParison(string password)
 {
 	bool booldata = true;
@@ -256,6 +256,7 @@ void Release(std::list<Member>* iList)
 		iList->pop_back();
 	}
 }
+
 void main()
 {
 	list<Member> member;
