@@ -37,7 +37,6 @@ void Swap(int arr[], int low, int right)
 
 void Asce(int arr[], int left, int right)
 {
-	int tmp;
 	if (left > right)
 		return;
 

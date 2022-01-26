@@ -1,7 +1,0 @@
-﻿  Student.cpp
-  StudentManager.cpp
-  소스.cpp
-E:\Programming12_02\coding\01.문제\소스.cpp(5,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
-  코드를 생성하고 있습니다...
-  LINK : E:\Programming12_02\coding\001.Coding\Debug\01.문제.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
-  01.문제.vcxproj -> E:\Programming12_02\coding\001.Coding\Debug\01.문제.exe

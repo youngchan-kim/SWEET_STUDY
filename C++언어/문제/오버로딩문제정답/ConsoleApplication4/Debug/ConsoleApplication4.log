@@ -1,0 +1,7 @@
+﻿  소스.cpp
+  Quiz.cpp
+c:\users\lg\desktop\consoleapplication4\consoleapplication4\quiz.cpp(55): warning C4018: '<=': signed 또는 unsigned가 일치하지 않습니다.
+  코드를 생성하고 있습니다...
+  LINK : C:\Users\LG\Desktop\ConsoleApplication4\Debug\ConsoleApplication4.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
+  ConsoleApplication4.vcxproj -> C:\Users\LG\Desktop\ConsoleApplication4\Debug\ConsoleApplication4.exe
+  ConsoleApplication4.vcxproj -> C:\Users\LG\Desktop\ConsoleApplication4\Debug\ConsoleApplication4.pdb (Full PDB)
