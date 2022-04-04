@@ -17,7 +17,7 @@ void Lotto_Run()
 		Stop = TRUE;
 		for (int i = 0; i < LOTTO_NUM; i++)
 		{
-			Lotto[i] = (rand() % 45) + 1;
+			Lotto[i] = (rand() % 7) + 1;
 			for (int j = 0; j < i; j++)
 			{
 				if (Lotto[j] == Lotto[i])
