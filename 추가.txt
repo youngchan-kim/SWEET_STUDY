@@ -1,4 +1,0 @@
-		int iItemType;
-
-void SetWord(int x, int itemType) {	y = 0; this->x = x; iItemType = itemType;  isDead = false;}
-	int GetWordItemType() { return iItemType; }
