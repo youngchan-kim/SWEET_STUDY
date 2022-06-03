@@ -42,7 +42,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     //Accelerator:단축키를 의미한다. 단축키를 의미하는 shorcut이 있지만 이 이름의 다른 기능이 존재한다.
 
     ULONGLONG FPS = 30;     // Frame Per Seconds
-    float invFPS = 1000 / FPS;  // 1초 : 1000
+    INT invFPS = 1000 / FPS;  // 1초 : 1000
 
     ULONGLONG frameTime, limitFrameTime = 0;
 
