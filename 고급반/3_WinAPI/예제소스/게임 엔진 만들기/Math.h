@@ -29,9 +29,6 @@ namespace ENGINE
 	inline bool operator== (const Vector2& lhs, const Vector2& rhs) { /* 流立 备泅 窍扁 */ }
 	inline bool operator!= (const Vector2& lhs, const Vector2& rhs) { /* 流立 备泅 窍扁 */ }
 
-	inline Vector2 operator*(const float& lhs, const Vector2& rhs) { /* 流立 备泅 窍扁 */ }
-	inline Vector2 operator/(const float& lhs, const Vector2& rhs) { /* 流立 备泅 窍扁 */ }
-
 	const float Epsilon = 0.0001f;
 
 	inline bool Equal(float lhs, float rhs) { return (std::abs(lhs - rhs) <= Epsilon); }

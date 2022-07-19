@@ -6,12 +6,12 @@ Player::Player()
 {
     ResourceMgr->Load("Player.bmp");
 
-    renderer = New SpriteRenderer("Player.bmp", SpritesX, SpritesY);
+    renderer = new SpriteRenderer("Player.bmp", SpritesX, SpritesY);
     renderer->SetPivot(Pivot::Left | Pivot::Bottom);
     renderer->SetScale(transform->scale.x, transform->scale.y);
     AddComponent(renderer);
-    AddComponent(anim = New SpriteAnimation(SpritesX, SpritesY));
-    AddComponent(input = New LRInput);
+    AddComponent(anim = new SpriteAnimation(SpritesX, SpritesY));
+    AddComponent(input = new LRInput);
 }
 
 VOID Player::SetScale(const Vector2& scale)
@@ -22,7 +22,7 @@ VOID Player::SetScale(const Vector2& scale)
 
 VOID Player::Initialize()
 {
-    transform->position = { 400, 670 };
+    transform->position = { 400, 600 };
 }
 
 VOID Player::Release()
@@ -62,7 +62,7 @@ VOID DemoScene::Initialize()
     background = ResourceMgr->GetBitmap("background.bmp");
     background->SetDrawSize(bounds, SceneMgr->GetHeight());
 
-    player = New Player;
+    player = new Player;
     player->Initialize();
     playerTr = player->GetTransform();
     playerSr = static_cast<SpriteRenderer*>(player->GetComponent(ComponentType::Graphic));
@@ -70,8 +70,7 @@ VOID DemoScene::Initialize()
     pauseBtn = UIMgr->AddUI<UIButton>("Pause Btn");
     pauseBtn->Initialize("pause_normal.bmp", "pause_pressed.bmp", "", "", DrawType::Transparent);
     pauseBtn->SetPosition(bounds - pauseBtn->GetSize().cx - 22, 10);
-    pauseBtn->SetListener(std::bind(&DemoScene::PauseBtnClickHandler, this));
-    pauseBtn->SetEnable(TRUE);
+    pauseBtn->SetListener(std::bind(&DemoScene::PauseBtnClickHandler, this));    
 
     pauseWindow = UIMgr->AddUI<UIImage>("PauseWindow Canvas");
     if (pauseWindow)
@@ -88,6 +87,8 @@ VOID DemoScene::Initialize()
         quitBtn->Initialize("quit_normal.bmp", "quit_pressed.bmp", "", "", DrawType::Transparent);
         quitBtn->SetLocalPosition(pauseWindow->GetSize().cx * 0.5f, pauseWindow->GetSize().cy * 0.5f + 50, true);
         quitBtn->SetListener(std::bind(&DemoScene::QuitBtnClickHandler, this));
+
+        pauseWindow->SetEnable(FALSE);
     }
 
     bounds -= playerSr->GetDrawSize().cx;
