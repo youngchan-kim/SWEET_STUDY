@@ -54,7 +54,7 @@ namespace ENGINE
 		Component* GetComponent(CONST ComponentType& type);
 		//컴포넌트를 추가하는 함수
 		BOOL AddComponent(Component* component);
-		//변환의 정보를 가져오는 함수
+		//변환된 정보를 가져오는 함수
 		Transform* GetTransform() CONST { return transform; }
 
 		//변환된 위치를 매개변수로 한 위치 설정 함수

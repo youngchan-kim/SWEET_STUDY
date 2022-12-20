@@ -26,7 +26,7 @@ EndMenuScene::EndMenuScene()
 	{
 		EndWindow->Initialize("background.bmp",DrawType::Transparent);
 		EndWindow->SetPosition(0, 0, TRUE);
-		//UI 추가 UIbuttonㅇ의 이름은 Play Btn 사용되는 곳은 배경에서 사용가능
+		//UI 추가 UIbutton의 이름은 Play Btn 사용되는 곳은 배경에서 사용가능
 		playBtn = UIMgr->AddUI<UIButton>("Play Btn", EndWindow);
 		//스타트버튼의 초기값으로 play노말과 프레스 이미지를 가지고 타입은 Transparent을 가진다.
 		playBtn->Initialize("play_normal.bmp", "play_pressed.bmp", "", "", DrawType::Transparent);
@@ -76,7 +76,6 @@ VOID EndMenuScene::PlayBtnClickHandler()
 //종료
 VOID EndMenuScene::QuitBtnClickHandler()
 {
-
 	PostQuitMessage(0);
 }
 

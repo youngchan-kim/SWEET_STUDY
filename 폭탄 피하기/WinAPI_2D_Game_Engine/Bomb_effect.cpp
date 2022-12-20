@@ -32,8 +32,8 @@ VOID Bomb_effect::SetScale(const Vector2& scale)
 
 VOID Bomb_effect::Update(const FLOAT& deltaTime, bool isbomb)
 {
+    //
     Operate(this);
-
     item_rect = { (LONG)transform->position.x,(LONG)(transform->position.y - bombrenderer->GetDrawSize().cy)
       ,(LONG)(transform->position.x + bombrenderer->GetDrawSize().cx) ,(LONG)transform->position.y };
 }

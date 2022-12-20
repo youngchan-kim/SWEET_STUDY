@@ -22,6 +22,7 @@ VOID DemoScene::Initialize()
     bounds = SceneMgr->GetWidth();
 
     background = ResourceMgr->GetBitmap("background.bmp");
+
     background->SetDrawSize(bounds, SceneMgr->GetHeight());
     //플레이어set
     player = new Player;
@@ -66,7 +67,7 @@ VOID DemoScene::Initialize()
     //이미지를 잘라 쓸 x값을 구함
     drawSize.cx = (float)(drawSize.cx / SpritesX);
     
-    //이미지를 자른 만큼만 사이즈를 다시 구함
+    //이미지를 자를만큼 사이즈를 입력
     life_imageSr->SetDrawSize(drawSize.cx, drawSize.cy);
     //이미지가 그려질 위치
     life_draw_pos = { (long)(background->GetSize().cx * 0.01f), (long)(background->GetSize().cy * 0.1f) };
