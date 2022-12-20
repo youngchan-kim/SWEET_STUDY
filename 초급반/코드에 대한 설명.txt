@@ -1,0 +1,14 @@
+이 코드가 어떤 역할을 하는건지 이코드가 없으면 왜 안되는 건지
+
+ex)
+void Character::Create(int mapx, int mapy, int Width, int Height)
+{
+	//원하는 동작이 중요해서  물어본건 이코드를 써서 뭘 하고 싶었던건지;
+	//원인 : 특수문자를 맵의 중앙에 두기위함;
+	//결과 : 특수문자 기준으로 반칸 즉 1바이트만 -1을 해주면 중앙에 올수 있다.
+	// 캐릭터가 움직일때 맵의 Width는 *2가 된다. 실제 맵의 크기는 두배이기 때문에.
+	m_imapcharacterx = mapx + Width - 1;
+	m_imapcharactery = mapy + (Height / 4);
+
+	Print();
+}
