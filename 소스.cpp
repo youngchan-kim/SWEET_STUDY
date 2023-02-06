@@ -79,3 +79,5 @@ int solution(vector<vector<string>> book_time) {
         return answer;
     }
 }
+
+// 계속 반복해서 해결하는 방법이 떠오를 때까지
