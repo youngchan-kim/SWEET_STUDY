@@ -29,6 +29,9 @@ charcter오브젝트를 만들어 boxman오브젝트와 빈 게임 오브젝트�
 
 1-3 이동중 케릭터가 이동 할 때 카메라가 바라보는 방향을 바라보게하는 방법
 
+시네머신으로 TPS 만들기
+https://www.youtube.com/watch?v=dqfVlSxOXv8
+
 
 //시네머신으로 3인칭 컨트롤러 찾아볼것
 
